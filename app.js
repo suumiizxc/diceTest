@@ -14,12 +14,9 @@ var diceNumber = Math.floor(Math.random() * 6) + 1;
 // getElementById not using # symbol tag
 //window.document.querySelector("#score-0").textContent = dice;
 
-
-
 document.querySelector(".btn-roll").addEventListener("click", rollDice);
 document.querySelector(".btn-hold").addEventListener("click", diceHold);
-document.querySelector(".btn-new").addEventListener("click",diceGameStart);
-
+document.querySelector(".btn-new").addEventListener("click", diceGameStart);
 
 var diceDom = document.querySelector(".dice");
 
@@ -51,7 +48,7 @@ const demo = document.querySelector("player-0-panel active");
 function diceTerminal() {
   if (diceNumber === 1) {
     if (playerStatus === 0) {
-        console.log(demo);
+      console.log(demo);
       playerStatus = 1;
     } else {
       playerStatus = 0;
@@ -73,7 +70,7 @@ function diceGameTerminal() {
   }
 
   if (gameEnd) {
-      diceDom.style.display = "none";
+    diceDom.style.display = "none";
     document.getElementById("current-0").textContent = 0;
     document.getElementById("current-1").textContent = 0;
   }
@@ -89,18 +86,16 @@ function diceHold() {
   }
 }
 
-function diceGameStart(){
-    
-    gameInit();
-    gameEnd = false;
-    
+function diceGameStart() {
+  gameInit();
+  gameEnd = false;
 }
 
-function gameInit(){
-    scores = [0,0];
-    playerStatus = 0;
-    document.getElementById("score-0").textContent = 0;
-    document.getElementById("score-1").textContent = 0;
-    document.getElementById("current-0").textContent = 0;
-    document.getElementById("current-1").textContent = 0;
+function gameInit() {
+  scores = [0, 0];
+  playerStatus = 0;
+  document.getElementById("score-0").textContent = 0;
+  document.getElementById("score-1").textContent = 0;
+  document.getElementById("current-0").textContent = 0;
+  document.getElementById("current-1").textContent = 0;
 }
