@@ -43,14 +43,16 @@ function rollDice() {
   }
 }
 
-const demo = document.querySelector("player-0-panel active");
-
 function diceTerminal() {
   if (diceNumber === 1) {
     if (playerStatus === 0) {
-      console.log(demo);
+      document.querySelector(".player-0-panel").classList.remove("active");
+      document.querySelector(".player-1-panel").classList.add("active");
       playerStatus = 1;
     } else {
+      document.querySelector(".player-1-panel").classList.remove("active");
+      document.querySelector(".player-0-panel").classList.add("active");
+      
       playerStatus = 0;
     }
   }
@@ -80,9 +82,13 @@ function diceHold() {
   if (playerStatus === 0) {
     playerStatus = 1;
     console.log("Player One hold");
+    document.querySelector(".player-0-panel").classList.remove("active");
+    document.querySelector(".player-1-panel").classList.add("active");
   } else {
     playerStatus = 0;
     console.log("Player Two hold");
+    document.querySelector(".player-1-panel").classList.remove("active");
+    document.querySelector(".player-0-panel").classList.add("active");
   }
 }
 
